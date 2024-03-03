@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Class generique */
+
+.hidden {
+    display: none !important;
+}
+
