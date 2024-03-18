@@ -1,11 +1,65 @@
 const welcomeContainer = document.querySelector("#welcome");
+let userInfos = "";
 
 window.addEventListener("message", function(event) {
-    console.log("Event de message sur le dom")
     let item = event.data
-    if (item.type === "WelcomeUI") 
+    if (item.type === "WelcomeUI" && item.display === true) 
     {
         welcomeContainer.classList.remove("hidden");
-        console.log("Je doit enlever Hidden du container welcome")
+        userInfos = item.userInfos
     }
 })
+
+let submit = false
+
+window.addEventListener("click", (e) => {
+    const identityForm = document.querySelector('#identityForm');
+    identityForm.addEventListener("submit", (e) => {
+        welcomeContainer.classList.add("hidden")
+
+        if (submit == true) {
+            e.preventDefault();
+            return;
+        }
+        submit = true
+
+        const firstname = identityForm.elements['firstname'].value 
+        const lastname = identityForm.elements['lastname'].value 
+        const birthday = identityForm.elements['birthday'].value 
+        const height = identityForm.elements['height'].value 
+        
+        let sex; 
+        const homme = identityForm.elements['sex'].checked
+        const femme = identityForm.elements['sex-femme'].checked
+
+        if (homme) {
+            sex = 0
+        } else if (femme) {
+            sex = 1
+        } else {
+            sex = 0
+        }
+
+        if (submit == true) {
+            fetch(`https://${GetParentResourceName()}/registerIdentity`, {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "applications/json; charset=UTF-8",
+                },
+                body: JSON.stringify({
+                    firstname:firstname,
+                    lastname:lastname,
+                    birthday:birthday,
+                    height:height,
+                    sex:sex,
+                    userInfos: userInfos,
+                }),
+            });
+            submit = false
+        }
+    })
+})
+
+const openURL = (url) => {
+    window.invokeNative("openURL", url);
+}

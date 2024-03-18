@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/welcome.css">
+
+    <!-- Link JS MAIN -->
+    <script src="./js/welcome.js" defer></script>
+
+    <!-- Link JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Title -->
+    <title>ABCore | UI</title>
+</head>
+<body>
+
+    <!-- ------------------------------------------------ -->
+    <!-- Premiere UI ouvert lors de la premiere connexion -->
+    <!-- ------------------------------------------------ -->
+    
+    <div class="hidden" id="welcome">
+        <h1>Bienvenue sur le server de Tutoriel a_dev.bat</h1>
+        <div class="btn-list">
+            <button class="btn btn-primary" onclick="openURL('https://atradium.fr')">Site WEB</button>
+            <button class="btn btn-secondary" onclick="openURL('https://discord.gg/NypbcRYtz3')">Discord</button>
+            <button class="btn btn-primary" onclick="openURL('https://docs.google.com/document/d/1CgTw2TqYa2l0_5RfM1BVMp-MPiHBvKJ1BIgtS53sj2k/edit?usp=sharing')">Reglement</button>
+        </div>
+        <form id="identityForm">
+            <div class="row">
+                <input type="text" id="firstname" placeholder="firstname" maxlength="35" minlength="2" required>
+                <input type="text" id="lastname" placeholder="lastname" maxlength="25" minlength="2" required>
+            </div>
+            <div class="row">
+                <input type="text" id="birthday" placeholder="Date de Naissance" maxlength="10" minlength="10" required>
+                <input type="text" id="height" placeholder="Taille (175)" maxlength="3" minlength="3" required>
+            </div>
+            <div class="sex-choice row">
+                <div>
+                    <input type="checkbox" id="homme" name="sex">
+                    <label for="homme">Homme</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="femme" name="sex-femme">
+                    <label for="femme">Femme</label>
+                </div>
+            </div>
+            <input type="submit" value="Cree Identiter" class="btn btn-primary">
+        </form>
+    </div>
+
+    <!-- ------------------------------------------------ -->
+    
+
+</body>
+</html>

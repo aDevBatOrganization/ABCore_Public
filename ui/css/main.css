@@ -1,0 +1,118 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Variable */
+
+:root {
+    --primary: rgb(20, 89, 145) ;
+    --secondary: rgb(7, 20, 133) ;
+    --black: rgb(15, 15, 15) ;
+    --color-font: rgb(216, 216, 216) ;
+    --grey-50: rgb(129, 129, 129) ;
+    --grey-100:rgb(88, 88, 88);
+    --grey-200:rgb(49, 48, 48);
+    --bg:rgba(22, 21, 21, 0.95);
+    --border: 3px solid rgb(51, 2, 2);
+    --border-radius-10: 10px;
+    --border-radius-20: 20px;
+}
+
+/* body */
+
+body {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-font);
+    text-align: center;
+}
+
+
+
+/* Class generique */
+
+.hidden {
+    display: none !important;
+}
+
+
+.btn {
+    border: var(--border);
+    border-radius: var(--border-radius-10);
+    color: var(--color-font);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.4rem;
+    margin: 0.6rem 1.8rem;
+    font-size: 1vw;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+}
+
+/* title */
+
+h1 {
+    margin-top: 2vh;
+    font-size: 2vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 1.4rem;
+}
+
+h2 {
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1.4vw;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 1.2vw;
+}
+
+input {
+    border: var(--border);
+    border-radius: var(--border-radius-10);
+    color: var(--color-font);
+    background-color: var(--grey-100);
+    font-size: 1vw;
+    text-transform: uppercase;
+    margin: 1.4rem 2rem;
+    padding: 0.6rem;
+    text-align: center;
+}
+
+input::placeholder {
+    font-size: 1vw;
+    text-transform: uppercase;
+    color: var(--color-font);
+    text-align: center;
+}
+
+label {
+    font-size: 1vw;
+    text-align: center;
+    color: var(--color-font);
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+

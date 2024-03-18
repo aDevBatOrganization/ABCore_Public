@@ -17,20 +17,23 @@ lua54 'yes'
 dependency 'mysql-async'
 
 shared_scripts {
+    'shared/init_ABCore.lua',
     'shared/*.lua'
 }
 
 client_scripts {
+    'client/function.lua',
     'client/*.lua'
 }
 
 server_scripts {
     '@mysql-async/lib/MySQL.lua',
+    'server/function.lua',
     'server/*.lua'
 }
 
 ui_page {
-    'ui/welcome.html',
+    'ui/ABCore.html',
 }
 
 files {

@@ -1,6 +1,6 @@
-Config = {}
+ABCore = ABCore
 
-spawn = {
+ABCore.Spawn = {
     money = 1500,
     bank = 10000,
 }
