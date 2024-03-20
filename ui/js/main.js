@@ -3,10 +3,22 @@ let userInfos = "";
 
 window.addEventListener("message", function(event) {
     let item = event.data
-    if (item.type === "WelcomeUI" && item.display === true) 
+    if (item.type === "WelcomeUI") 
     {
         welcomeContainer.classList.remove("hidden");
         userInfos = item.userInfos
+    }
+    else if (item.type === "notification") 
+    {
+        console.log('event notification')
+        const notifContainer = document.getElementById('notification')
+        const notifParagraphe = document.getElementById('notification-container')
+        notifContainer.classList.remove("hidden");
+        notifParagraphe.innerHTML = item.text;
+
+        this.setTimeout(function() {
+            notifContainer.classList.add("hidden")
+        }, item.duration)
     }
 })
 

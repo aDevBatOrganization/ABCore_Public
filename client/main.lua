@@ -6,6 +6,7 @@ local isUiOpen = false
 
 Citizen.CreateThread(function ()
     TriggerServerEvent("ABCore:connexion")
+    -- TriggerEvent('ABCore:notification', "Bienvenue sur le server de a_dev.bat.", 6000)
 end)
 
 -- ouvre le NUI WelcomeUI
@@ -16,7 +17,6 @@ AddEventHandler("ABCore:WelcomeUI", function (userInfos)
     SetNuiFocus(true, true)
     SendNUIMessage({
         type = "WelcomeUI",
-        display = true,
         userInfos = userInfos
     })
 end)
@@ -37,3 +37,9 @@ RegisterNUICallback('openUrl', function (data, cb)
      os.execute('start ' .. url)
     end
  end)
+
+
+RegisterNetEvent('ABCore:healClient')
+AddEventHandler('ABCore:healClient', function ()
+    SetEntityHealth(PlayerPedId(), 200)
+end)

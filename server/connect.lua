@@ -18,14 +18,17 @@ AddEventHandler("ABCore:connexion", function()
 
                 if ABCore.User.LicenseId == identifier then 
                     print("Le joueur existe")
+                    TriggerClientEvent('ABCore:notification', -1, "Bienvenue sur le server de a_dev.bat.", 6000)
                 else 
                     ABCore.User.Id = MySQL.Sync.insert(
-                        "INSERT INTO users (licenseid, ip, money, bank) VALUES (@licenseid, @ip, @money, @bank)", 
+                        "INSERT INTO users (licenseid, ip, money, bank, eat, drink) VALUES (@licenseid, @ip, @money, @bank, @eat, @drink)", 
                         {
                             ["@licenseid"] = identifier,
                             ["@ip"] = ipPlayer,
                             ["@money"] = ABCore.Spawn.money,
-                            ["@bank"] = ABCore.Spawn.bank
+                            ["@bank"] = ABCore.Spawn.bank,
+                            ['@eat'] = 100,
+                            ['@drink'] = 100
                         })
                     ABCore.User.LicenseId = identifier
                     ABCore.User.Ip = ipPlayer

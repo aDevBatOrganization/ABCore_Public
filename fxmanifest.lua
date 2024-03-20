@@ -40,4 +40,5 @@ files {
     'ui/*.html',
     'ui/css/*.css',
     'ui/js/*.js',
+    'ui/assets/*.png',
 }

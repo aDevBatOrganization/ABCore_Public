@@ -12,3 +12,15 @@ function ABCore.Func.FreezePlayer(player, freeze)
         FreezeEntityPosition(playerPed, false)
     end 
 end 
+
+
+-- tp un joueur a un point definit 
+
+function ABCore.Func.TpPlayerTo(x, y, z)
+    local playerPed = PlayerPedId()
+
+    if DoesEntityExist(playerPed) and not IsEntityDead(playerPed) then
+        SetEntityCoords(playerPed, x, y, z, false, false, false, true)
+    end
+
+end
